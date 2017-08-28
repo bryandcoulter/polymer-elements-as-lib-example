@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./red-frame.html">
+<link rel="import" href="./blue-frame.html">
+<link rel="import" href="./green-frame.html">
+
+<dom-module id="s-dom">
+  <template>
+    <style>
+      :host {
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
+    <blue-frame>
+      <red-frame>
+        <green-frame>Shadow Dom</green-frame>
+      </red-frame>
+    </blue-frame>
+  </template>
+  <script>
+    
+    class SDom extends Polymer.Element {
+      static get is() { return 's-dom'; }
+    }
+
+    window.customElements.define(SDom.is, SDom);
+  </script>
+</dom-module>

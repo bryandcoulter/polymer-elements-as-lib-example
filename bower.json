@@ -1,0 +1,21 @@
+{
+  "name": "polymer-elements-as-lib-example",
+  "description": "Show how to use webpack to create a library of element definitions that can be used anywhere.",
+  "main": "index.js",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0"
+  },
+  "authors": [
+    "Bryan Coulter"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bryandcoulter/polymer-elements-as-lib-example",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

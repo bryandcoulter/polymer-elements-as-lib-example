@@ -1,0 +1,22 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="green-frame">
+  <template>
+    <style>
+      :host {
+        display: block;
+        border: 1px solid green;
+        padding: 10px;
+      }
+    </style>
+    <slot></slot>
+  </template>
+  <script>
+    
+    class GreenFrame extends Polymer.Element {
+      static get is() { return 'green-frame'; }
+    }
+
+    window.customElements.define(GreenFrame.is, GreenFrame);
+  </script>
+</dom-module>
