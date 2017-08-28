@@ -9,12 +9,21 @@
         padding: 10px;
       }
     </style>
+    <span>[[baseContent]]</span>
     <slot></slot>
   </template>
   <script>
     
-    class BlueFrame extends Polymer.Element {
+    window.BlueFrame = class extends Polymer.Element {
       static get is() { return 'blue-frame'; }
+      static get properties() {
+        return {
+          baseContent: {
+            type: String,
+            value: 'blue frame',
+          }
+        }
+      }
     }
 
     window.customElements.define(BlueFrame.is, BlueFrame);

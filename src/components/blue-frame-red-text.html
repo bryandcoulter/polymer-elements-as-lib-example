@@ -1,0 +1,25 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="./blue-frame.html">
+
+<dom-module id="blue-frame-red-text">
+  <template>
+    <style>
+      :host {
+        display: block;
+        border: 1px solid blue;
+        padding: 10px;
+        color: red;
+      }
+    </style>
+    <span>[[baseContent]]</span>
+    <slot></slot>
+  </template>
+  <script>
+    
+    class BlueFrameRedText extends BlueFrame {
+      static get is() { return 'blue-frame-red-text'; }
+    }
+
+    window.customElements.define(BlueFrameRedText.is, BlueFrameRedText);
+  </script>
+</dom-module>
