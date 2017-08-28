@@ -2,21 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
-const BABEL_PRESETS = [
-  [
-    'env',
-    {
-      targets: {
-        browsers: [
-          'last 2 versions',
-          'IE 11',
-        ],
-      },
-    },
-  ],
-];
-
 module.exports = {
   // Tell Webpack which file kicks off our app.
   entry: path.resolve(__dirname, 'src/index.js'),
