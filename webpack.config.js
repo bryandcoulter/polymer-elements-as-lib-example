@@ -1,14 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   // Tell Webpack which file kicks off our app.
-  entry: path.resolve(__dirname, 'src/index.js'),
+  entry: {
+    index: './src/entry/index.js',
+    red: './src/entry/red.js',
+    blue: './src/entry/blue.js',
+    green: './src/entry/green.js',
+  },
   // Tell Weback to output our bundle to ./dist/bundle.js
   output: {
-    filename: '[hash].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'public/dist'),
   },
   // Tell Webpack which directories to look in to resolve import statements.
   // Normally Webpack will look in node_modules by default but since we’re overriding
@@ -56,12 +62,16 @@ module.exports = {
   // Enable the Webpack dev server which will build, serve, and reload our
   // project on changes.
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     compress: true,
     port: 9000,
   },
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'commons',
+      filename: 'commons.js',
+    }),
     // This plugin will generate an index.html file for us that can be used
     // by the Webpack dev server. We can give it a template file (written in EJS)
     // and it will handle injecting our bundle for us.
